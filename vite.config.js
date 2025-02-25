@@ -1,8 +1,10 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
-// https://vite.dev/config/
 export default defineConfig({
   base: process.env.NODE_ENV === "production" ? "/SaaS-App-Landing-Page/" : "/",
+  build: {
+    assetsDir: "", // Ensures images are directly in /dist
+  },
   plugins: [react()],
 });
